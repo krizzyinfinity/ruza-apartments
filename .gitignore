@@ -11,12 +11,23 @@
 # production
 /build
 
-# local env files
+
+
+
+s (14 sloc)  127 Bytes
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+node_modules/
+
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
 
 
 # misc
