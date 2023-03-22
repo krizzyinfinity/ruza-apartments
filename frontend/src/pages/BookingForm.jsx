@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import StripeCheckout from "react-stripe-checkout";
 import { Box, Button, Grid, Typography } from "@mui/material";
@@ -122,7 +122,7 @@ const BookingForm = () => {
                   
             </Typography>
 
-            <img src={room[0].imageUrls[0]} className="myImg" />
+            <img src={room[0].imageUrls[0]} alt="apartment" className="myImg" />
           </Box>
           <Box sx={{ mt: 6 }}>
             <Typography

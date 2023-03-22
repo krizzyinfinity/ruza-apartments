@@ -34,10 +34,13 @@ router.post("/bookroom", async (req, res) => {
 
     if (payment) {
       const newBooking = new Booking({
-        room: room.name,
+        room: room.apartmentNumber,
         roomid: room._id,
-        fromDate: moment(fromDate, "DD/MM/YYYY"),
-        toDate: moment(toDate, "DD-MM-YYYY"),
+        // fromDate: moment(fromDate, "DD/MM/YYYY"),
+        // toDate: moment(toDate, "DD/MM/YYYY"),
+         
+      fromDate: moment(fromDate).format("DD-MM-YYYY"),
+      toDate: moment(toDate).format("DD-MM-YYYY"),
         people,
         totalAmount,
         totalNights,
@@ -47,8 +50,11 @@ router.post("/bookroom", async (req, res) => {
       const roomBooked = await Room.findOneAndUpdate({ _id: room._id });
       roomBooked.currentbookings.push({
         bookingid: booking._id,
-        fromDate: moment(fromDate, "DD/MM/YYYY")._i,
-        toDate: moment(toDate, "DD/MM/YYYY")._i,
+        // fromDate: moment(fromDate, "DD/MM/YYYY")._i,
+        // toDate: moment(toDate, "DD/MM/YYYY")._i,
+         
+      fromDate: moment(fromDate).format("DD-MM-YYYY"),
+      toDate: moment(toDate).format("DD-MM-YYYY"),
         transactionid: booking.transactionId,
 
         status: "booked",
@@ -73,27 +79,32 @@ router.get("/getallbookings", async(req, res) => {
 });
 
 
-router.post("/bookroom/admin", async (req, res) => {
-  const { room, fromDate, toDate, totalAmount, totalNights, people } =
+router.post("/admin/bookroom", async (req, res) => {
+  const { name, from, to, totalAmount, totalNights, people, id } =
     req.body;
+
+    
+
 
   try {
    const newBooking = new Booking({
-        room: room.name,
-        roomid: room._id,
-        fromDate: moment(fromDate, "DD/MM/YYYY"),
-        toDate: moment(toDate, "DD-MM-YYYY"),
+        room: name,
+        roomid: id,
+      
+        fromDate: moment(from).format("DD-MM-YYYY"),
+        toDate: moment(to).format("DD-MM-YYYY"),
         people,
         totalAmount,
         totalNights,
         
       });
       const booking = await newBooking.save();
-      const roomBooked = await Room.findOneAndUpdate({ _id: room._id });
+      const roomBooked = await Room.findOneAndUpdate({ _id: id });
       roomBooked.currentbookings.push({
         bookingid: booking._id,
-        fromDate: moment(fromDate, "DD/MM/YYYY")._i,
-        toDate: moment(toDate, "DD/MM/YYYY")._i,
+        
+      fromDate: moment(from).format("DD-MM-YYYY"),
+      toDate: moment(to).format("DD-MM-YYYY"),
         transactionid: "null",
 
         status: "booked",

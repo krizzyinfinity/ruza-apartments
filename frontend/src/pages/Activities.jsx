@@ -6,11 +6,11 @@ import img3 from "../images/kayak4.jpg";
 import img4 from "../images/kayak6.jpeg";
 import img5 from "../images/aqa.jpg";
 import img6 from "../images/bike.jpg";
-import { Link } from "react-router-dom";
+
 import { useTranslation } from "react-i18next";
 
-const images = [img1, img2, img3, img4, img5, img6];
 const Activities = () => {
+  const images = [img1, img2, img3, img4, img5, img6];
   const [currentSlide, setCurrentSlide] = useState(0);
   const { t } = useTranslation();
 
@@ -38,6 +38,7 @@ const Activities = () => {
           return (
             <img
               src={img}
+              alt="accommodation images"
               className={
                 index === currentSlide ? "imageActive homeImage" : "image"
               }

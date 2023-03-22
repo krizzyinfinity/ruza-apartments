@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Modal from '@mui/material/Modal';
-import { Box, Button, Grid, Typography } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Box, Button, Typography } from '@mui/material';
+
 import CloseIcon from '@mui/icons-material/Close';
 const style = {
     position: 'absolute',
@@ -36,7 +36,7 @@ const ModalComponent = ({open, handleOpen, rooms, handleClose}) => {
           rooms.map((image)=> {
             return(
               <Box sx={{flexGrow:1}}>
-                <img src={image} style={{width:250, height:190,
+                <img src={image} alt="apartment" style={{width:250, height:190,
                    margin:4}} />
                
               </Box>

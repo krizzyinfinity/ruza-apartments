@@ -7,15 +7,15 @@ const roomSchema = mongoose.Schema({
     },
     apartmentNumber: {
         type: String,
-        required: false
+        //required: false
     },
     description:{
         type:String,
-        required:true
+        //required:true
     },
     maxCount: {
         type:Number,
-        required:true
+        //required:true
     },
     
     imageUrls: [],

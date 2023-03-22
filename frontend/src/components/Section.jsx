@@ -97,6 +97,7 @@ const Section = () => {
             return (
               <img
                 src={img}
+                alt="accommodation images"
                 className={
                   index === currentSlide ? "imageActive homeImage" : "image"
                 }
@@ -108,14 +109,14 @@ const Section = () => {
           <Typography
             sx={{ fontSize: { xs: 16, sm: 20, md: 20, lg: 20, xl: 30 }, m: 5 }}
           >
-            {t("section2")} 
+            {t("section2")}
             <Link
               style={{ textDecoration: "none", color: "#af9a7d" }}
               to="/accommodation"
             >
-               {t("accommodation")}
+              {t("accommodation")}
             </Link>
-             {t("page")}
+            {t("page")}
           </Typography>
         </Box>
       </Box>

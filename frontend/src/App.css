@@ -25,6 +25,13 @@ margin: auto;
 margin-top:5rem;
 object-fit: contain;
 }
+.myInput {
+  height: 5vh;
+  width:30%;
+  margin-bottom:2vh;
+  border-radius: 1vh;
+  padding-left:2vh;
+}
 
 table {
   border-collapse: collapse;
@@ -124,6 +131,13 @@ tr:not(:first-child):not(:last-child) th {
   .myImg {
     width:80vw;
     height:40vh;
+  }
+  .myInput {
+    height: 5vh;
+    width:70%;
+    margin-bottom:2vh;
+    border-radius: 1vh;
+    padding-left:2vh;
   }
 }
 

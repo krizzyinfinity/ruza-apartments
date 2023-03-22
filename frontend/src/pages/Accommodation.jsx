@@ -114,18 +114,13 @@ const Accommodation = () => {
           }
         }
       }
-      if (availability == true || room.currentbookings.length == 0) {
+      if (availability == true || room.currentbookings.length === 0) {
         tempRooms.push(room);
       }
 
       setRooms(tempRooms);
     }
-    return (
-      <h1>
-        Sorry, no availability for your dates! You can still send us an email
-        and make an enquiry!
-      </h1>
-    );
+   
   };
 
   return (
