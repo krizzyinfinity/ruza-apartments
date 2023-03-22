@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
-
 const dotenv = require("dotenv");
+require("dotenv").config();
 const adminRoute = require("./routes/userRoute");
 const roomsRoute = require("./routes/roomsRoute");
 const bookingsRoute = require("./routes/bookingsRoute");
